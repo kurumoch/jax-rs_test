@@ -28,15 +28,15 @@ public class LoginService {
         return Response.status(Response.Status.UNAUTHORIZED).build();
     }
 
-   /* @GET
+    @GET
     @Path("/login")
     @Produces("application/json")
     public Response login(@Context HttpServletRequest request) {
         HttpSession session = request.getSession();
         session.setAttribute("userId", 1);
         return Response.status(Response.Status.OK).build();
+
     }
-*/
     @GET
     public Response hi() {
         return Response.ok("HI").build();
