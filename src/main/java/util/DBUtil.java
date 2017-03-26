@@ -13,11 +13,11 @@ import static util.HibernateUtil.getSessionFactory;
  */
 public class DBUtil {
 
-    public static User getUser(String username, String password) {
+    public static User getUser(String username) {
         Session session = getSessionFactory().getCurrentSession();
         session.beginTransaction();
-        User user = (User) session.createQuery("select u from User u where u.username = :username and u.password = :password")
-                .setParameter("username", username).setParameter("password", password).list().toArray()[0];
+        User user = (User) session.createQuery("select u from User u where u.username = :username")
+                .setParameter("username", username).list().toArray()[0];
         session.getTransaction().commit();
         session.close();
         return user;

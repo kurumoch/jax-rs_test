@@ -22,7 +22,7 @@ import static util.ServiceUtil.*;
 /**
  * Created by denis on 16.02.17.
  */
-@Path("resources/notebook")
+@Path("/resources/notebook")
 public class NotebookService {
 
     private DBHelper<Notebook> dbHelper = new DBHelper<>(Notebook.class);

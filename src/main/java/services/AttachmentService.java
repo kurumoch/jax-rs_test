@@ -12,7 +12,7 @@ import static util.ServiceUtil.*;
 /**
  * Created by denis on 16.02.17.
  */
-@Path("resources/attachment")
+@Path("/rest/resources/attachment")
 public class AttachmentService {
     private DBHelper<Attachment> dbHelper = new DBHelper<>(Attachment.class);
 

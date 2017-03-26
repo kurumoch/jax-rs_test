@@ -8,7 +8,6 @@ import util.HibernateUtil;
 public class Main {
 
     public static void main(String[] args) {
-        User user = DBUtil.getUser("USER1", "PASSWORD1");
-        System.out.println("");
+
     }
 }

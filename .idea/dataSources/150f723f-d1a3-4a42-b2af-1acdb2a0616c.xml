@@ -177,7 +177,7 @@
     </column>
     <column id="50" parent="10" name="PASSWORD">
       <Position>3</Position>
-      <DataType>varchar(20)|0</DataType>
+      <DataType>varchar(1000)|0</DataType>
     </column>
     <index id="51" parent="10" name="USER_USERNAME_uindex">
       <ColNames>USERNAME</ColNames>

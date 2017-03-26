@@ -19,7 +19,8 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>
-                    <webXml>web/WEB-INF/web.xml</webXml>
+                    <!--webXml>web/WEB-INF/web.xml</webXml-->
+                    <webappDirectory>web</webappDirectory>
                 </configuration>
             </plugin>
         </plugins>
@@ -29,6 +30,12 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>war</packaging>
     <dependencies>
+        <dependency>
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>0.4</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-war-plugin</artifactId>
