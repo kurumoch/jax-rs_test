@@ -27,7 +27,8 @@ public class NotebookService {
 
     private DBHelper<Notebook> dbHelper = new DBHelper<>(Notebook.class);
 
-
+    /*
+    * создание блокнота*/
     @POST
     @Consumes("application/json")
     public Response createNotebook(Notebook notebook) throws IOException {
@@ -35,6 +36,11 @@ public class NotebookService {
         return Response.created(URI.create("/notebook/" + notebook.getId())).build();
     }
 
+    /*
+    * получение по id
+    * id берется из пути
+    * например /rest/resources/notebook/3/
+    * id = 3*/
     @GET
     @Produces("application/json")
     @Path("{id}")
@@ -45,6 +51,7 @@ public class NotebookService {
         else return new Notebook();
     }
 
+    /*обновление по id*/
     @PUT
     @Consumes("application/json")
     @Path("{id}")
@@ -56,6 +63,7 @@ public class NotebookService {
         }
     }
 
+    /*удаление по id*/
     @DELETE
     @Produces("application/json")
     @Path("{id}")
@@ -65,6 +73,7 @@ public class NotebookService {
             dbHelper.delete(id);
     }
 
+    /*получение записей из блокнота, который вызван по id*/
     @GET
     @Produces("application/json")
     @Path("{id}/notes")

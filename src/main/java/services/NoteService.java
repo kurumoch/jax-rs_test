@@ -25,7 +25,7 @@ import static util.ServiceUtil.*;
 public class NoteService {
     private DBHelper<Note> dbHelper = new DBHelper<>(Note.class);
 
-
+    /*аналогично NotebookService*/
     @POST
     @Consumes("application/json")
     public Response createNote(Note note) throws IOException {

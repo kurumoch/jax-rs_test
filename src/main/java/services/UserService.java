@@ -25,6 +25,7 @@ import java.util.Set;
 public class UserService {
     private DBHelper<User> dbHelper = new DBHelper<>(User.class);
 
+    /*это навряд ли надо*/
 
     @POST
     @Consumes("application/json")
@@ -56,6 +57,9 @@ public class UserService {
     public void deleteUser(@PathParam("id") int id) {
         dbHelper.delete(id);
     }
+
+
+    /*получение блокнотов по id пользователя*/
 
     @GET
     @Produces("application/json")

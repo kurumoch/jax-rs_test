@@ -17,7 +17,7 @@ public class RequestFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         if (((HttpServletRequest) servletRequest).getSession().getAttribute("userId") == null) {
-            ((HttpServletResponse) servletResponse).sendRedirect("/");
+            ((HttpServletResponse) servletResponse).sendRedirect("/login.html");
             return;
         }
         filterChain.doFilter(servletRequest, servletResponse);

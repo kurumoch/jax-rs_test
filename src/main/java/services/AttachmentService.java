@@ -16,6 +16,7 @@ import static util.ServiceUtil.*;
 public class AttachmentService {
     private DBHelper<Attachment> dbHelper = new DBHelper<>(Attachment.class);
 
+
     @POST
     @Consumes("application/json")
     public Response createAttachment(Attachment attachment) {
