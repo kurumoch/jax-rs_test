@@ -22,6 +22,7 @@ public class LoginService {
     /*
     * сервис логина
     * formparam получает из формы
+    * FormParam("username") - из формы под названием username, например
     * путь к этому сервису /rest/login
     * вообще, ко всем путям дописывается /rest/
     * */
