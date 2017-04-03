@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-
-<body>
-<h1>Login</h1>
-
-<form action="/rest/login" method="post">
-    <p>
-        <label for="username">username</label>
-        <input id="username" type="text" name="username"/>
-    </p>
-    <p>
-        <label for="password">password</label>
-        <input id="password" type="password" name="password"/>
-    </p>
-    <input type="submit" value="login"/>
-</form>
-
-</body>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="page-header">
+				<h2>Not so smart note <small>login page</h2>
+			</div>
+		
+			<form name="login" method="post" action="#" class="jumbotron text-center" style="background-image: url(peter.png)">
+				<p>
+					Username:<Br>
+					<input name="username" type="text">
+				</p>
+				<p>
+					Password:<Br>
+					<input name="password" type="password">
+				</p>
+				<input type="submit" value="Submit" class="btn btn-default btn-sm">
+			</form>
+			
+			<div class="alert alert-danger alert-dismissable">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<strong>Error!</strong> Username or password are incorrect
+			</div>
+		</div>
+	</body>
 </html>
