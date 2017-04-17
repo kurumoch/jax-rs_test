@@ -27,22 +27,13 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.6.0</version>
-                <executions>
-                    <execution>
-                        <id>exec-npm-run</id>
-                        <configuration>
-                            <workingDirectory>/web/</workingDirectory>
-                            <executable>npm</executable>
-                            <arguments>
-                                <argument>install</argument>
-                                <argument>run tsc</argument>
-                            </arguments>
-                            <goals>
-                                <goal>exec</goal>
-                            </goals>
-                        </configuration>
-                    </execution>
-                </executions>
+                <configuration>
+                    <workingDirectory>/web/</workingDirectory>
+                    <executable>npm</executable>
+                    <arguments>
+                        <argument>run tsc</argument>
+                    </arguments>
+                </configuration>
             </plugin>
         </plugins>
 
