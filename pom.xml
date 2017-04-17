@@ -35,7 +35,7 @@
                             <executable>npm</executable>
                             <arguments>
                                 <argument>install</argument>
-                                <argument>start</argument>
+                                <argument>run tsc</argument>
                             </arguments>
                             <goals>
                                 <goal>exec</goal>
