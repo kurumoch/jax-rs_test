@@ -34,7 +34,7 @@ public class DBHelper<T extends GetIDable> {
         session.close();
         if (obj == null) throw new WebApplicationException(Response.Status.NOT_FOUND);
         return obj;
-
+//
     }
 
     public void write(T obj) {
