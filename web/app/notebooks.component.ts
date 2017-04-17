@@ -59,7 +59,7 @@ export class NotebooksComponent implements OnInit{
 	}
 	
 	getNotebooks(): void {
-            this.notebooksService.getNotebooksFromWeb().then(notebooks => this.notebooks = notebooks);
+            this.notebooksService.getNotebooks().then(notebooks => this.notebooks = notebooks);
 	}
 	
 	ngOnInit(): void {

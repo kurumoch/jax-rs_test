@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var notebooks_service_1 = require('./notebooks.service');
+var core_1 = require("@angular/core");
+var notebooks_service_1 = require("./notebooks.service");
 var NotebooksComponent = (function () {
     function NotebooksComponent(notebooksService) {
         this.notebooksService = notebooksService;
@@ -23,7 +23,7 @@ var NotebooksComponent = (function () {
     };
     NotebooksComponent.prototype.getNotebooks = function () {
         var _this = this;
-        this.notebooksService.getNotebooksFromWeb().then(function (notebooks) { return _this.notebooks = notebooks; });
+        this.notebooksService.getNotebooks().then(function (notebooks) { return _this.notebooks = notebooks; });
     };
     NotebooksComponent.prototype.ngOnInit = function () {
         this.getNotebooks();
@@ -41,23 +41,23 @@ var NotebooksComponent = (function () {
     };
     NotebooksComponent.prototype.edit = function () {
     };
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], NotebooksComponent.prototype, "onChanged", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], NotebooksComponent.prototype, "onEdit", void 0);
-    NotebooksComponent = __decorate([
-        core_1.Component({
-            selector: 'notebooks',
-            template: "\n\t\t<div class=\"well\">\n\t\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t\t\t<li *ngFor=\"let notebook of notebooks\"\n\t\t\t\t[class.active]=\"notebook === selectedNotebook\"\n\t\t\t\t(click)=\"onSelect(notebook)\">\n\t\t\t\t\t<a href=\"#\">{{notebook.notebookName}}</a>\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</div>\n\t\t<div class=\"btn-group btn-group-justified\" id=\"accordion\">\n\t\t\t<div class=\"btn-group\">\n\t\t\t\t<button type=\"button\" data-toggle=\"collapse\" data-parent=\"#accordion\" data-target=\"#createNotebook\" class=\"btn btn-primary\">Create</button>\n\t\t\t</div>\n\t\t\t<div class=\"btn-group\">\n\t\t\t\t<button type=\"button\" data-toggle=\"collapse\" data-parent=\"#accordion\" data-target=\"#editNotebook\" class=\"btn btn-primary\">Edit</button>\n\t\t\t</div>\n\t\t\t<div class=\"btn-group\">\n\t\t\t\t<button type=\"button\" class=\"btn btn-primary\" (click)=\"delete\">Delete</button>\n\t\t\t</div>\n\t\t</div>\n\t\t<div id=\"createNotebook\" class=\"collapse well\">\n\t\t\t<form>\n\t\t\t\t<label>Name of notebook: </label><br>\n\t\t\t\t<input [(ngModel)]=\"name\" [ngModelOptions]=\"{standalone: true}\">\n\t\t\t\t<input (click)=\"create($event)\" type=\"submit\" value=\"Create\" class=\"btn btn-default btn-primary btn-sm\" >\n\t\t\t</form>\n\t\t</div>\n\t\t<div id=\"editNotebook\" class=\"collapse well\">\n\t\t\t<form>\n\t\t\t\t<label>New name of notebook: </label><br>\n\t\t\t\t<input type=\"text\">\n\t\t\t\t<input type=\"submit\" value=\"Edit\" class=\"btn btn-default btn-primary btn-sm\">\n\t\t\t</form>\n\t\t</div>\n\t",
-            providers: [notebooks_service_1.NotebooksService]
-        }), 
-        __metadata('design:paramtypes', [notebooks_service_1.NotebooksService])
-    ], NotebooksComponent);
     return NotebooksComponent;
 }());
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], NotebooksComponent.prototype, "onChanged", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], NotebooksComponent.prototype, "onEdit", void 0);
+NotebooksComponent = __decorate([
+    core_1.Component({
+        selector: 'notebooks',
+        template: "\n\t\t<div class=\"well\">\n\t\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t\t\t<li *ngFor=\"let notebook of notebooks\"\n\t\t\t\t[class.active]=\"notebook === selectedNotebook\"\n\t\t\t\t(click)=\"onSelect(notebook)\">\n\t\t\t\t\t<a href=\"#\">{{notebook.notebookName}}</a>\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</div>\n\t\t<div class=\"btn-group btn-group-justified\" id=\"accordion\">\n\t\t\t<div class=\"btn-group\">\n\t\t\t\t<button type=\"button\" data-toggle=\"collapse\" data-parent=\"#accordion\" data-target=\"#createNotebook\" class=\"btn btn-primary\">Create</button>\n\t\t\t</div>\n\t\t\t<div class=\"btn-group\">\n\t\t\t\t<button type=\"button\" data-toggle=\"collapse\" data-parent=\"#accordion\" data-target=\"#editNotebook\" class=\"btn btn-primary\">Edit</button>\n\t\t\t</div>\n\t\t\t<div class=\"btn-group\">\n\t\t\t\t<button type=\"button\" class=\"btn btn-primary\" (click)=\"delete\">Delete</button>\n\t\t\t</div>\n\t\t</div>\n\t\t<div id=\"createNotebook\" class=\"collapse well\">\n\t\t\t<form>\n\t\t\t\t<label>Name of notebook: </label><br>\n\t\t\t\t<input [(ngModel)]=\"name\" [ngModelOptions]=\"{standalone: true}\">\n\t\t\t\t<input (click)=\"create($event)\" type=\"submit\" value=\"Create\" class=\"btn btn-default btn-primary btn-sm\" >\n\t\t\t</form>\n\t\t</div>\n\t\t<div id=\"editNotebook\" class=\"collapse well\">\n\t\t\t<form>\n\t\t\t\t<label>New name of notebook: </label><br>\n\t\t\t\t<input type=\"text\">\n\t\t\t\t<input type=\"submit\" value=\"Edit\" class=\"btn btn-default btn-primary btn-sm\">\n\t\t\t</form>\n\t\t</div>\n\t",
+        providers: [notebooks_service_1.NotebooksService]
+    }),
+    __metadata("design:paramtypes", [notebooks_service_1.NotebooksService])
+], NotebooksComponent);
 exports.NotebooksComponent = NotebooksComponent;
 //# sourceMappingURL=notebooks.component.js.map

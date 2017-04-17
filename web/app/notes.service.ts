@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
 
 import { Note } from './note';
 import { Notebook } from './notebook';
@@ -6,6 +7,8 @@ import { NOTES } from './mock-notes';
 
 @Injectable()
 export class NotesService {
+    constructor(private http: Http) { }
+    
     getNotes(notebook: Notebook): Promise<Note[]> {
         let result: Note[] = [];
         for (let note of NOTES) {
@@ -30,10 +33,9 @@ export class NotesService {
         NOTES.splice(result, 1);
     }
     
-    create(noteName: string): number {
+    create(noteName: string) {
         let note: Note = {id: NOTES.length+1, noteName: noteName, noteText: ""};
         NOTES.push(note);
-        return note.id;
     }
     
     save(noteId: number, text: string) {

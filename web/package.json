@@ -1,8 +1,8 @@
 {
-    "name": "nssn",
+    "name": "helloapp",
     "version": "1.0.0",
     "scripts": {
-        "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
+        "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
         "lite": "lite-server",
         "tsc": "tsc",
         "tsc:w": "tsc -w"
@@ -21,8 +21,7 @@
         "core-js": "^2.4.1",
         "reflect-metadata": "^0.1.8",
         "rxjs": "5.0.1",
-        "zone.js": "^0.7.4",
-        "jquery": "~3.2.1"
+        "zone.js": "^0.7.4"
     },
     "devDependencies": {
         "@types/core-js": "^0.9.35",
